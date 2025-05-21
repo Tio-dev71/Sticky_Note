@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+
+        <div class="container1">
+            <button id="addnote">Add note</button>
+        </div>
+
+        <div class="container2">
+        </div>
+
+        <div class="container3">
+            <div class="container3-heading">
+                <H1>Add Notes</H1>
+                <i id="xmark" class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="container3-body">
+                <div class="container3-body_title">
+                    <h2>Note title</h2>
+                    <input id="note-title" type="text" placeholder="Title">
+                </div>
+
+                <div class="container3-body_description">
+                    <h2>Note Description</h2>
+                    <form>
+                        <textarea id="note-text" rows="7" placeholder="Description"></textarea>
+                    </form>
+                </div>
+
+                <div class="container3-body_footer">
+                    <div class="line"></div>
+                    <div class="container3-body_footer_action">
+                        <button id="discardcard">Discard</button>
+                        <button id="addcard">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="https://kit.fontawesome.com/4e5f50f91f.js" crossorigin="anonymous"></script>
+    <script src="./main.js" defer></script>
+</body>
+</html>

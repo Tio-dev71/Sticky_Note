@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Hebrew:wght@100..800&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    font-family: "Playwrite IT Moderna", cursive;
+    font-style: normal;
+    font-optical-sizing: auto;
+    background-color: #edf0f5;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+}
+
+#addnote {
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #007aff;
+    color: azure;
+}
+
+#addnote:hover {
+    cursor: pointer;
+}
+
+.container3 {
+    display: none;
+    position: absolute;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: rgb(151, 151, 151) 0px 0px 10px 1px;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    width: 100%;
+}
+
+.container3-heading {
+    background-color: #17a2b7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px 0 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container3-heading h1 {
+    font-size: 18px;
+    color: azure;
+}
+
+#xmark {
+    padding-right: 15px;
+    font-size: 18px;
+    color: #6dc7d4;
+}
+
+#xmark:hover {
+    cursor: pointer;    
+    color: hsl(189, 56%, 81%);
+}
+
+.container3-body {
+    background-color: aliceblue;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.container3-body_title, .container3-body_description {
+    padding: 15px 25px 5px 15px;
+}
+
+.container3-body_title h2, .container3-body_description h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.container3-body_title input {
+    font-size: 16px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: rgb(174, 175, 177);
+    padding: 10px 0 10px 10px;
+    width: 100%;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.container3-body_title input:focus, #note-text:focus {
+    box-shadow: #17a2b7 0px 0px 2px 2px;
+    outline: none;
+}
+
+#note-text {
+    width: 100%;
+    border-color: rgb(174, 175, 177);
+    border-radius: 5px;
+    padding: 10px 0 0 10px;
+    font-size: 18px;
+    transition: box-shadow 0.2s ease-in-out;
+    max-width: 100%;
+}
+
+.line {
+    width: 100%;
+    background-color: rgb(174, 175, 177);
+    height: 1px;
+    margin-top: 6px;
+}
+
+.container3-body_footer { 
+    display: flex;
+    flex-direction: column;
+}
+
+.container3-body_footer_action {
+    display: flex;
+    margin: 15px 0 15px 0;
+    justify-content: flex-end;
+}
+
+#discardcard, #addcard {
+    background-color: #dd3546;
+    border-color: none;
+    font-size: 16px;
+    color: azure;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    margin-right: 15px;
+}
+
+:is(#addcard, #discardcard):hover {
+    cursor: pointer;
+}
+
+#addcard {
+    background-color: #17a2b7;
+    padding: 0 15px 0 15px;
+}
+
+.container2 {
+    margin: 20px 20px 0 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    grid-auto-flow: row;
+}
+
+.container2 div{
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 350px;
+}
+
+.container2 div .container2_line {
+    width: 3px;
+    height: 40px;
+    background-color: red;
+    margin-top: 20px;
+}
+
+.container2_heading {
+    display: flex;
+    padding-top: 10px;
+}
+
+.container2_introduce {
+    padding: 0px 0px 0px 20px;
+}
+
+.container2_heading h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.container2_heading h2 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(135, 139, 139);
+}
+
+.container2_body-description {
+    font-size: 16px;
+    font-weight: 200;
+    padding-left: 20px;
+    height: 70px;
+}
+
+.container2_footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px 20px 20px;
+}
+
+.container2_footer i {
+    margin: 0 20px 0 0 0;
+}
+
+.container2_footer i:hover {
+    cursor: pointer;
+}
