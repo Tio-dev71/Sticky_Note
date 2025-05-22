@@ -208,3 +208,39 @@ body {
 .container2_footer i:hover {
     cursor: pointer;
 }
+
+@media screen and (max-width: 950px) {
+    .container2 div {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container2 div {
+        max-width: 400px;
+    }
+
+    .container3 {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container2 div {
+        max-width: 340px;
+    }
+
+    .container3 {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .container2 div {
+        max-width: 300px;
+    }
+
+    .container3 {
+        max-width: 350px;
+    }
+}

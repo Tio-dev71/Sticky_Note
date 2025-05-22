@@ -6,7 +6,15 @@ const noteTitle = document.querySelector('#note-title')
 const discard = document.querySelector('#discardcard');
 const addcard = document.querySelector('#addcard');
 
-let index = 0;
+
+function getNotes() {
+    return JSON.parse(localStorage.getItem('notes') || '[]');
+}
+
+function saveNotes(notes) {
+    localStorage.setItem('notes', JSON.stringify(notes));
+}
+
 let randomcolor = ["#c2ff3d","#ff3de8","#3dc2ff","#04e022","#bc83e6","#ebb328","#ff3d3d","#ff8c3d","#ff3d8c","#3dff8c"];
 
 addNote.addEventListener('click', () => {
@@ -14,8 +22,9 @@ addNote.addEventListener('click', () => {
 });
 
 discard.addEventListener('click', () => {
+    localStorage.clear();
     addNoteForm.style.display = 'none';
-})
+});
 
 xmark.addEventListener('click', () => {
     addNoteForm.style.display = 'none';
@@ -29,9 +38,19 @@ noteText.addEventListener('keydown', (e) => {
     var day = date.getDate();
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
+
+    const notes = getNotes();
+    notes.push({
+        title,
+        description,
+        day,
+        month,
+        year
+    });
+    saveNotes(notes);
     createStickyNote(description, title, day, month, year);
     }
-})
+});
 
 addcard.addEventListener('click', () => {
     const title = noteTitle.value;
@@ -40,8 +59,22 @@ addcard.addEventListener('click', () => {
     var day = date.getDate();
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
+
+    const notes = getNotes();
+    notes.push({
+        title,
+        description,
+        day,
+        month,
+        year
+    });
+    saveNotes(notes);
     createStickyNote(description, title, day, month, year);
-})
+
+    noteText.value = '';
+    noteTitle.value = '';
+    addNoteForm.style.display = 'none';
+});
 
 
 
@@ -73,7 +106,19 @@ createStickyNote = (text, title, day, month, year) => {
     const remove = root.querySelector("#remove");
     remove.addEventListener("click", () => {
         main.removeChild(root);
+        let notes = getNotes();
+        notes = notes.filter(note =>
+            !(note.title === title && note.description === text && note.day === day && note.month === month && note.year === year)
+        );
+        saveNotes(notes);
     });
 
     main.appendChild(root);
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const notes = getNotes();
+    notes.forEach(note => {
+        createStickyNote(note.description, note.title, note.day, note.month, note.year);
+    });
+});
